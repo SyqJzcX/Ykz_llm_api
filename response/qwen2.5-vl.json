@@ -1,0 +1,42 @@
+{
+    "id": "chatcmpl-1b77b96a-ffa7-9c41-acc6-c67480b0407e",
+    "choices": [
+        {
+            "finish_reason": "stop",
+            "index": 0,
+            "logprobs": null,
+            "message": {
+                "content": "\\operatorname{Attention}(Q, K, V) = \\operatorname{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V",
+                "refusal": null,
+                "role": "assistant",
+                "annotations": null,
+                "audio": null,
+                "function_call": null,
+                "tool_calls": null
+            }
+        }
+    ],
+    "created": 1752862039,
+    "model": "qwen2.5-vl-72b-instruct",
+    "object": "chat.completion",
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+        "completion_tokens": 38,
+        "prompt_tokens": 487,
+        "total_tokens": 525,
+        "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": null,
+            "rejected_prediction_tokens": null,
+            "text_tokens": 38
+        },
+        "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": null,
+            "text_tokens": 125,
+            "image_tokens": 362
+        }
+    }
+}

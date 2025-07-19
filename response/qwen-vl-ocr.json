@@ -1,0 +1,31 @@
+{
+    "id": "chatcmpl-7acea48c-516f-91ee-85ea-5e0687cfda73",
+    "choices": [
+        {
+            "finish_reason": "stop",
+            "index": 0,
+            "logprobs": null,
+            "message": {
+                "content": "$$\\mathrm { A t t e n t i o n } ( Q , K , V ) = \\operatorname { s o f t m a x } ( \\frac { Q K ^ { T } } { \\sqrt { d _ { K } } } ) V ( 2 - 1 )$$",
+                "refusal": null,
+                "role": "assistant",
+                "annotations": null,
+                "audio": null,
+                "function_call": null,
+                "tool_calls": null
+            }
+        }
+    ],
+    "created": 1752858106,
+    "model": "qwen-vl-ocr-latest",
+    "object": "chat.completion",
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+        "completion_tokens": 67,
+        "prompt_tokens": 478,
+        "total_tokens": 545,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+    }
+}
