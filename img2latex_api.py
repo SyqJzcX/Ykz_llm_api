@@ -9,7 +9,7 @@ def img2latex_api(model: str, api_key: str, base_url: str, image_path: str, prox
     openai.api_key = api_key
     openai.api_base = base_url
 
-    qwen_vl_ocr_latest = LlmApi(
+    qwen_api = LlmApi(
         api_key=openai.api_key,
         base_url=openai.api_base,
         model=model,
@@ -34,7 +34,7 @@ def img2latex_api(model: str, api_key: str, base_url: str, image_path: str, prox
         }
     ]
 
-    answer = qwen_vl_ocr_latest.get_response(prompt_list)
+    answer = qwen_api.get_response(prompt_list)
 
     return answer
 
