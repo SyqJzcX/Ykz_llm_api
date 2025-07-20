@@ -3,7 +3,7 @@ from qwen_api import LlmApi
 from typing import List
 
 
-def img2latex(model: str, api_key: str, base_url: str, image_path: str, proxy: str = None) -> str:
+def img2latex_api(model: str, api_key: str, base_url: str, image_path: str, proxy: str = None) -> str:
     """主函数：调用 LLM API 进行图片到 LaTeX 的转换"""
     openai.proxy = proxy  # 可选的代理设置
     openai.api_key = api_key
@@ -40,7 +40,7 @@ def img2latex(model: str, api_key: str, base_url: str, image_path: str, proxy: s
 
 
 if __name__ == "__main__":
-    latex = img2latex(
+    latex = img2latex_api(
         api_key="sk-fdcf1779455c4453af36562cf4678690",
         base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
         model="qwen2.5-vl-72b-instruct",
