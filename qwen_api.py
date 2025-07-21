@@ -28,7 +28,7 @@ class LlmApi:
         # 设置模型
         self.model = model
 
-    def get_response(self, prompt_list: List[dict]) -> str:
+    def get_response(self, prompt_system: str, prompt_list: List[dict]) -> str:
         """获取 LLM 响应"""
         prompt_json = []
 
@@ -53,6 +53,15 @@ class LlmApi:
         response = self.client.chat.completions.create(
             model=self.model,
             messages=[
+                {
+                    "role": "system",
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": prompt_system
+                        }
+                    ],
+                },
                 {
                     "role": "user",
                     "content": prompt_json

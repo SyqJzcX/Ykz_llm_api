@@ -16,17 +16,19 @@ def img2latex_api(model: str, api_key: str, base_url: str, image_path: str, prox
         proxy=openai.proxy  # 使用代理
     )
 
+    prompt_system = """
+        你是一个专业的LaTeX公式识别专家。
+        请将图片中的数学公式准确转换为LaTeX代码。
+        要求：
+        1. 只返回标准LaTeX代码，不包含任何解释或说明，可以直接嵌入到HTML文档中
+        2. 公式两边不需要加入任何额外的数学环境标记(如 \\[ \\] 或 \\( \\) 等)
+        3. 如果公式末尾包含类似 ( 2 - 1 ) 这样的公式编号，请将这部分去掉
+    """
+
     prompt_list = [
         {
             "type": "text",
-            "text": """
-                你是一个专业的LaTeX公式识别专家。
-                请将图片中的数学公式准确转换为LaTeX代码。
-                要求：
-                1. 只返回标准LaTeX代码，不包含任何解释或说明，可以直接嵌入到HTML文档中
-                2. 公式两边不需要加入任何额外的数学环境标记(如 \\[ \\] 或 \\( \\) 等)
-                3. 如果公式末尾包含类似 ( 2 - 1 ) 这样的公式编号，请将这部分去掉
-                """
+            "text": "请将图片中的公式翻译为 LaTeX 代码。"
         },
         {
             "type": "image_url",
@@ -34,7 +36,7 @@ def img2latex_api(model: str, api_key: str, base_url: str, image_path: str, prox
         }
     ]
 
-    answer = qwen_api.get_response(prompt_list)
+    answer = qwen_api.get_response(prompt_system, prompt_list)
 
     return answer
 
